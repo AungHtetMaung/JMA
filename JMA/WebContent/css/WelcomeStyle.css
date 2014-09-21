@@ -1,0 +1,33 @@
+h2 {
+	font-size: 24px ;
+  	font-family: "Arial Narrow", Arial, Helvetica, sans-serif;
+	color: #F96B18;
+  	border-top: 2px dotted #8DA516;
+	border-bottom: 2px dotted #8DA516;
+ 	padding-top: 5px;
+	padding-bottom: 5px;
+	overflow: hidden;
+  	zoom: 1;
+  	
+}
+h3 {
+	font-size:150%;
+	font-family:Baskerville, "Palatino Linotype", Times, serif;
+	color:#ea1ab3;
+	margin:2px 0 2px 0;
+}
+.inauguration {
+	border: 1px solid #762020;
+	float: right;
+	margin: 10px;
+	padding: 1px;
+	
+}
+.IMP {
+	color: #333;
+	border: 2px dashed #BD8110;
+	background-color: #FBF8A9;
+	margin-top: 25px;
+	margin-bottom: 35px;
+	padding: 20px;
+}

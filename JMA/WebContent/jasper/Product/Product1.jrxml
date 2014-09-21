@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 4.0.2-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Product" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString language="SQL">
+		<![CDATA[]]>
+	</queryString>
+	<field name="article" class="java.lang.String">
+		<fieldDescription><![CDATA[article]]></fieldDescription>
+	</field>
+	<field name="catalogue" class="java.lang.String">
+		<fieldDescription><![CDATA[catalogue]]></fieldDescription>
+	</field>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<field name="fieldEditable" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[fieldEditable]]></fieldDescription>
+	</field>
+	<field name="id" class="java.lang.Long">
+		<fieldDescription><![CDATA[id]]></fieldDescription>
+	</field>
+	<field name="material" class="java.lang.String">
+		<fieldDescription><![CDATA[material]]></fieldDescription>
+	</field>
+	<field name="note" class="com.jms.modelcontroller.models.ProductNote">
+		<fieldDescription><![CDATA[note]]></fieldDescription>
+	</field>
+	<field name="photo" class="java.lang.String">
+		<fieldDescription><![CDATA[photo]]></fieldDescription>
+	</field>
+	<field name="prodetail" class="com.jms.modelcontroller.models.ProductDetail">
+		<fieldDescription><![CDATA[prodetail]]></fieldDescription>
+	</field>
+	<field name="productRef" class="java.lang.String">
+		<fieldDescription><![CDATA[productRef]]></fieldDescription>
+	</field>
+	<field name="proprice" class="com.jms.modelcontroller.models.ProductPrice">
+		<fieldDescription><![CDATA[proprice]]></fieldDescription>
+	</field>
+	<field name="stage" class="java.lang.Integer">
+		<fieldDescription><![CDATA[stage]]></fieldDescription>
+	</field>
+	<field name="stoneCode" class="java.lang.String">
+		<fieldDescription><![CDATA[stoneCode]]></fieldDescription>
+	</field>
+	<field name="type" class="java.lang.String">
+		<fieldDescription><![CDATA[type]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="58" splitType="Stretch">
+			<staticText>
+				<reportElement x="180" y="17" width="200" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Product Information]]></text>
+			</staticText>
+			<componentElement>
+				<reportElement x="0" y="17" width="100" height="30"/>
+				<jr:Code39 xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<jr:codeExpression><![CDATA[$F{id}]]></jr:codeExpression>
+				</jr:Code39>
+			</componentElement>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="470" y="19" width="100" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="58" splitType="Stretch">
+			<staticText>
+				<reportElement x="-1" y="7" width="81" height="20"/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="7" width="100" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement mode="Opaque" x="-20" y="32" width="595" height="21" forecolor="#000000" backcolor="#12FFEF"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="33" width="100" height="20"/>
+				<text><![CDATA[Stage 1]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="118" splitType="Stretch">
+			<staticText>
+				<reportElement x="30" y="10" width="100" height="20"/>
+				<text><![CDATA[Catalogue]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="10" width="100" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{catalogue}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="10" width="100" height="20"/>
+				<text><![CDATA[Material]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="400" y="10" width="100" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{material}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="30" y="40" width="100" height="20"/>
+				<text><![CDATA[Stone Code]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="40" width="100" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{stoneCode}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="40" width="100" height="20"/>
+				<text><![CDATA[Product Ref]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="400" y="40" width="100" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{productRef}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="30" y="80" width="100" height="20"/>
+				<text><![CDATA[Type]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="80" width="100" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{type}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="80" width="100" height="20"/>
+				<text><![CDATA[Article]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="400" y="80" width="100" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{article}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="267" splitType="Stretch">
+			<printWhenExpression><![CDATA[new Boolean($F{prodetail}.getCastingWeigh()!=null)]]></printWhenExpression>
+			<rectangle>
+				<reportElement mode="Opaque" x="-20" y="10" width="595" height="21" forecolor="#000000" backcolor="#12FFEF"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="30" y="51" width="100" height="20"/>
+				<text><![CDATA[Stone Class]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="51" width="100" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{prodetail}.getStoneClass()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="51" width="100" height="20"/>
+				<text><![CDATA[Stone Name]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="400" y="51" width="100" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{prodetail}.getStoneName()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="10" width="100" height="20"/>
+				<text><![CDATA[Stage 2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="81" width="100" height="20"/>
+				<text><![CDATA[Static Text]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="81" width="100" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{prodetail}.getStoneShape()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="81" width="100" height="20"/>
+				<text><![CDATA[Casting Weigh]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="400" y="81" width="100" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{prodetail}.getCastingWeigh()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="30" y="111" width="100" height="20"/>
+				<text><![CDATA[Before Casting Weigh]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="111" width="100" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{prodetail}.getBeforeRecutWeigh()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="111" width="100" height="20"/>
+				<text><![CDATA[Afhter Casing Weigh]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="400" y="111" width="100" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{prodetail}.getAfterRecutWeigh()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="30" y="141" width="100" height="20"/>
+				<text><![CDATA[Size1]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="141" width="100" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{prodetail}.getSize1()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="141" width="100" height="20"/>
+				<text><![CDATA[Size2]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="400" y="141" width="100" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{prodetail}.getSize2()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="30" y="171" width="100" height="20"/>
+				<text><![CDATA[Size3]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="171" width="100" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{prodetail}.getSize3()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="171" width="100" height="20"/>
+				<text><![CDATA[PriceA]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="400" y="171" width="100" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{proprice}.getPriceA()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="30" y="201" width="100" height="20"/>
+				<text><![CDATA[PriceB]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="201" width="100" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{proprice}.getPriceB()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="201" width="100" height="20"/>
+				<text><![CDATA[PriceC]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="400" y="201" width="100" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{proprice}.getPriceC()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="30" y="231" width="100" height="20"/>
+				<text><![CDATA[PriceD]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="231" width="100" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{proprice}.getPriceD()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="231" width="100" height="20"/>
+				<text><![CDATA[PriceU]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="400" y="231" width="100" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{proprice}.getPriceU()]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="167" splitType="Stretch">
+			<printWhenExpression><![CDATA[new Boolean($F{note}.getCreateDate()!=null)]]></printWhenExpression>
+			<rectangle>
+				<reportElement mode="Opaque" x="-20" y="9" width="595" height="21" forecolor="#000000" backcolor="#12FFEF"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="10" width="100" height="20"/>
+				<text><![CDATA[Stage 3]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="42" width="100" height="20"/>
+				<text><![CDATA[Create Date]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="42" width="100" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{note}.getCreateDate()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="42" width="100" height="20"/>
+				<text><![CDATA[Design Date]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="400" y="42" width="100" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{note}.getDisignDate()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="30" y="72" width="100" height="20"/>
+				<text><![CDATA[Material Mould]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="72" width="100" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{note}.getMaterialMold()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="72" width="100" height="20"/>
+				<text><![CDATA[No of Parts]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="400" y="72" width="100" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{note}.getNopartitem()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="30" y="102" width="100" height="20"/>
+				<text><![CDATA[Note]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="102" width="100" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{note}.getNote()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="102" width="100" height="20"/>
+				<text><![CDATA[Ref1]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="400" y="102" width="100" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{note}.getRef1()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="30" y="132" width="100" height="20"/>
+				<text><![CDATA[Ref2]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="132" width="100" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{note}.getRef2()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="132" width="100" height="20"/>
+				<text><![CDATA[Ref3]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="400" y="132" width="100" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{note}.getRef3()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="10" width="140" height="20"/>
+				<textFieldExpression class=""><![CDATA[$F{note}.getCreateDate().toString()]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="36" splitType="Stretch">
+			<staticText>
+				<reportElement x="80" y="10" width="400" height="20"/>
+				<text><![CDATA[AnnonymousA Company Limited.Ph123456]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN" "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+	<definition name="baseLayout" template="/views/MasterPage.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/views/Banner.jsp" />
+		<put-attribute name="css" value="//css/MasterStyle.css" type="string" />
+		<put-attribute name="menu" value="/views/NavigationMenu.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/views/Copyright.jsp" />
+	</definition>
+	<definition name="welcome.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Welcome to IMCEITS" />
+		<put-attribute name="body" value="/views/Home.jsp" />
+	</definition>
+	<definition name="aboutus.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Welcome to IMCEITS" />
+		<put-attribute name="body" value="/views/About.jsp" />
+	</definition>
+	<definition name="courses.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Welcome to IMCEITS" />
+		<put-attribute name="body" value="/views/CourseInfo.jsp" />
+	</definition>
+	<definition name="register.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Welcome to IMCEITS" />
+		<put-attribute name="body" value="/views/Register.jsp" />
+	</definition>
+	<definition name="contact.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Welcome to IMCEITS" />
+		<put-attribute name="body" value="/views/ContactUs.jsp" />
+	</definition>
+</tiles-definitions>

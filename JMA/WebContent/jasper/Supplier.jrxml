@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 4.0.2-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Supplier" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<field name="bank" class="com.jms.modelcontroller.models.BankInfo">
+		<fieldDescription><![CDATA[bank]]></fieldDescription>
+	</field>
+	<field name="btype" class="com.jms.modelcontroller.models.BusinessType">
+		<fieldDescription><![CDATA[btype]]></fieldDescription>
+	</field>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<field name="id" class="java.lang.Long">
+		<fieldDescription><![CDATA[id]]></fieldDescription>
+	</field>
+	<field name="address" class="java.lang.String">
+		<fieldDescription><![CDATA[address]]></fieldDescription>
+	</field>
+	<field name="buType" class="java.util.List">
+		<fieldDescription><![CDATA[buType]]></fieldDescription>
+	</field>
+	<field name="catalog" class="java.util.List">
+		<fieldDescription><![CDATA[catalog]]></fieldDescription>
+	</field>
+	<field name="city" class="java.lang.String">
+		<fieldDescription><![CDATA[city]]></fieldDescription>
+	</field>
+	<field name="companyName" class="java.lang.String">
+		<fieldDescription><![CDATA[companyName]]></fieldDescription>
+	</field>
+	<field name="contactName" class="java.lang.String">
+		<fieldDescription><![CDATA[contactName]]></fieldDescription>
+	</field>
+	<field name="country" class="java.lang.String">
+		<fieldDescription><![CDATA[country]]></fieldDescription>
+	</field>
+	<field name="email1" class="java.lang.String">
+		<fieldDescription><![CDATA[email1]]></fieldDescription>
+	</field>
+	<field name="email2" class="java.lang.String">
+		<fieldDescription><![CDATA[email2]]></fieldDescription>
+	</field>
+	<field name="faxNo" class="java.lang.String">
+		<fieldDescription><![CDATA[faxNo]]></fieldDescription>
+	</field>
+	<field name="meMo" class="java.lang.String">
+		<fieldDescription><![CDATA[meMo]]></fieldDescription>
+	</field>
+	<field name="payment" class="com.jms.modelcontroller.models.PaymentType">
+		<fieldDescription><![CDATA[payment]]></fieldDescription>
+	</field>
+	<field name="position" class="java.lang.String">
+		<fieldDescription><![CDATA[position]]></fieldDescription>
+	</field>
+	<field name="postCode" class="java.lang.String">
+		<fieldDescription><![CDATA[postCode]]></fieldDescription>
+	</field>
+	<field name="province" class="java.lang.String">
+		<fieldDescription><![CDATA[province]]></fieldDescription>
+	</field>
+	<field name="teleponeNo1" class="java.lang.String">
+		<fieldDescription><![CDATA[teleponeNo1]]></fieldDescription>
+	</field>
+	<field name="teleponeNo2" class="java.lang.String">
+		<fieldDescription><![CDATA[teleponeNo2]]></fieldDescription>
+	</field>
+	<field name="webAdd" class="java.lang.String">
+		<fieldDescription><![CDATA[webAdd]]></fieldDescription>
+	</field>
+	<field name="businessType" class="java.lang.String">
+		<fieldDescription><![CDATA[businessType]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="80" splitType="Stretch">
+			<staticText>
+				<reportElement x="200" y="20" width="190" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="14"/>
+				</textElement>
+				<text><![CDATA[SUPPLIER INFORMATION]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="454" y="38" width="100" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement x="20" y="10" width="100" height="30"/>
+				<jr:Code39 xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<jr:codeExpression><![CDATA[$F{id}]]></jr:codeExpression>
+				</jr:Code39>
+			</componentElement>
+			<staticText>
+				<reportElement x="0" y="60" width="100" height="20"/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="60" width="100" height="20"/>
+				<textFieldExpression class=""><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="518" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="40" width="80" height="20"/>
+				<text><![CDATA[COMPANY NAME]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="40" width="100" height="20"/>
+				<textFieldExpression class=""><![CDATA[$F{companyName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="180" y="40" width="100" height="20"/>
+				<text><![CDATA[CONTACT NAME]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="280" y="40" width="100" height="20"/>
+				<textFieldExpression class=""><![CDATA[$F{contactName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="480" y="40" width="75" height="20"/>
+				<textFieldExpression class=""><![CDATA[$F{position}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="380" y="40" width="100" height="20"/>
+				<text><![CDATA[POSITION]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-20" y="1" width="595" height="1"/>
+			</line>
+			<line>
+				<reportElement x="-30" y="-21" width="605" height="1"/>
+			</line>
+			<rectangle>
+				<reportElement mode="Opaque" x="-20" y="10" width="595" height="21" forecolor="#000000" backcolor="#12FFEF"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="4" y="11" width="135" height="20"/>
+				<text><![CDATA[General Information]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="80" width="80" height="20"/>
+				<text><![CDATA[ ADDRESS]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="130" y="80" width="100" height="20"/>
+				<textFieldExpression class=""><![CDATA[$F{address}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="279" y="160" width="100" height="20"/>
+				<text><![CDATA[PROVINCE]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="430" y="160" width="110" height="20"/>
+				<textFieldExpression class=""><![CDATA[$F{province}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="281" y="80" width="100" height="20"/>
+				<text><![CDATA[POST CODE]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="432" y="80" width="110" height="20"/>
+				<textFieldExpression class=""><![CDATA[$F{postCode}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="157" width="80" height="20"/>
+				<text><![CDATA[CITY]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="130" y="157" width="100" height="20"/>
+				<textFieldExpression class=""><![CDATA[$F{city}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="120" width="79" height="20"/>
+				<text><![CDATA[EMAIL]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="130" y="120" width="100" height="20"/>
+				<textFieldExpression class=""><![CDATA[$F{email1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="120" width="100" height="20"/>
+				<text><![CDATA[EMAIL2]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="430" y="120" width="110" height="20"/>
+				<textFieldExpression class=""><![CDATA[$F{email2}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement mode="Opaque" x="-20" y="191" width="595" height="21" forecolor="#000000" backcolor="#12FFEF"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="4" y="192" width="135" height="20"/>
+				<text><![CDATA[Bussiness Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="264" width="135" height="20"/>
+				<text><![CDATA[CATALOG]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Opaque" x="-20" y="262" width="595" height="21" forecolor="#000000" backcolor="#12FFEF"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="262" width="135" height="20"/>
+				<text><![CDATA[BANK INFORMATION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="290" width="100" height="20"/>
+				<text><![CDATA[BNF NAME]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="180" y="291" width="100" height="20"/>
+				<textFieldExpression class=""><![CDATA[$F{bank}.getBnfName()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="291" width="100" height="20"/>
+				<text><![CDATA[BANK NAME]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="430" y="290" width="100" height="20"/>
+				<textFieldExpression class=""><![CDATA[$F{bank}.getBankName()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="321" width="100" height="20"/>
+				<text><![CDATA[BANK 2]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="180" y="321" width="100" height="20"/>
+				<textFieldExpression class=""><![CDATA[$F{bank}.getAddBnfBank1()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="320" width="100" height="20"/>
+				<text><![CDATA[BANK 1]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="432" y="320" width="100" height="20"/>
+				<textFieldExpression class=""><![CDATA[$F{bank}.getAddBnfBank2()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="351" width="100" height="20"/>
+				<textFieldExpression class=""><![CDATA[$F{bank}.getAccNo1()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="351" width="100" height="20"/>
+				<text><![CDATA[ACCOUNT 2]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="432" y="350" width="100" height="20"/>
+				<textFieldExpression class=""><![CDATA[$F{bank}.getAccNo2()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="350" width="100" height="20"/>
+				<text><![CDATA[ACCOUNT 1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="380" width="100" height="20"/>
+				<text><![CDATA[SWIFT CODE1]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="180" y="381" width="100" height="20"/>
+				<textFieldExpression class=""><![CDATA[$F{bank}.getSwiftCode1()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="381" width="100" height="20"/>
+				<text><![CDATA[SWIFT CODE 2]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="432" y="380" width="100" height="20"/>
+				<textFieldExpression class=""><![CDATA[$F{bank}.getSwiftCode2()]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement mode="Opaque" x="0" y="421" width="555" height="21" forecolor="#000000" backcolor="#12FFEF"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="4" y="421" width="135" height="20"/>
+				<text><![CDATA[PAYMENT INFORMATION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="460" width="100" height="20"/>
+				<text><![CDATA[TYPE]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="140" y="461" width="139" height="20"/>
+				<textFieldExpression class=""><![CDATA[$F{payment}.getPayType()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="461" width="100" height="20"/>
+				<text><![CDATA[CREDIT TERM]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="380" y="461" width="150" height="20"/>
+				<textFieldExpression class=""><![CDATA[$F{payment}.getCreditTerm()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="490" width="100" height="20"/>
+				<text><![CDATA[CREDIT LIMIT]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="140" y="491" width="139" height="20"/>
+				<textFieldExpression class=""><![CDATA[$F{payment}.getCreditLimit()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="281" y="491" width="100" height="20"/>
+				<text><![CDATA[CURRENCY]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="380" y="491" width="150" height="20"/>
+				<textFieldExpression class=""><![CDATA[$F{payment}.getCurreNcy()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="79" y="231" width="100" height="20"/>
+				<text><![CDATA[BUSINESS TYPE]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="220" y="231" width="325" height="20"/>
+				<textFieldExpression class=""><![CDATA[$F{meMo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="80" y="408" width="400" height="-125"/>
+				<textElement textAlignment="Center">
+					<font isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Annonymous Co Ltd.Ph 123456]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="51" splitType="Stretch">
+			<staticText>
+				<reportElement x="-20" y="10" width="595" height="13" forecolor="#F831A1"/>
+				<textElement>
+					<font fontName="Serif"/>
+				</textElement>
+				<text><![CDATA[*The Confidential Records , Keep Carefully.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="30" width="400" height="20"/>
+				<textElement textAlignment="Center">
+					<font isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Annonymous Co Ltd.Ph 123456]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

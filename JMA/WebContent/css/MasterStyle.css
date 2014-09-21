@@ -1,0 +1,108 @@
+#masterlayer{
+		
+		position:  relative;
+		top: 0px;
+		width: 80%;
+		margin: 0px;
+		height:100%;
+		border-color: red;
+		border-style: dotted;
+		
+		
+	}
+/* specify absolute position of banner in vieport(i.e. browser window), with left and top parameter, also specify the height of banner */
+#header{
+	
+		position:relative;
+		left:0%;
+		top: 0%;
+		height:8%;
+		width: 100%;
+/* 		border-color: silver;
+		border-style: dotted; */
+		
+}
+/*since we have specified position for 'wrap' to be relative, hence any elements contained within it(i.e. menu,contentarea & footer divs) will be
+given position relative to this element*/
+#wrap{
+		position:relative;
+		left: 0%;
+		right: 0%;
+		top: 0%;
+		margin:0%;
+		width: 100%;
+		height:95%;
+		border-color: orange;
+		border-style: dotted;
+		
+}
+/*specify position of 'menu' div to be 0px on left and 0px on top with respect to 'wrap' div */		
+#menu{
+		position:relative;
+		left:0%;
+		top: 0%;
+		margin:0px;
+		width:100%;
+		height: 0%;	
+		border-color: lime;
+		border-style: dotted;
+}
+
+/*specify position of 'contentarea' div to be 150px on left(this is essential because this much space will be taken by 'menu' div) and 0px on top from 'wrap' div */
+#contentarea{
+		position: relative;
+		left:0%;
+		top:0.5%;
+		height:91.5%;
+		width:100%;
+		border-color: green;
+		border-style: solid;
+		background-color: white;
+}
+#nav{
+	
+		position: absolute;
+		padding-left:0.3%;
+		padding-right:0.3%;
+		padding-top: 0%;
+		width: 14%;
+		height:100%;
+		border-color: black;
+		border-style: dotted;
+		background-color: white;
+		border-radius: 4px;
+		-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	  	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	  	-webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	  	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	  	overflow-y: scroll;
+}
+#box{
+	
+		position: absolute;
+		padding-left:15%;
+		padding-right:1%;
+		padding-top: 0%;
+		width: 100%;
+		height:100%;
+		border-color: black;
+		border-style: dotted;
+		background-color: white;
+		border-radius: 4px;
+		overflow-y: scroll;
+		-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	  	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	  	-webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	  	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+/*specify position of 'footer' div to be 0px from left and 705px from top(since, this much space will be taken by 'contentarea' div) with respect to 'wrap' div*/
+#footer{
+		position:relative;
+		top:1.5%;
+		width: 100%;
+		left: 0%;
+		border-color: blue;
+		border-style: dotted;
+		background-color: gray;
+}
+		

@@ -1,0 +1,63 @@
+@CHARSET "ISO-8859-1";
+
+.odd{
+background-color: gray;
+}
+.even{
+background-color: #18cbd8;
+}
+span{
+margin-left:5%;
+margin-bottom:15px;
+color:maroon;
+}
+.pagebanner{
+display: none;
+}
+.pagelinks{
+color: maroon;
+margin-top:20px;
+background-size:20px 20px;
+padding-left: 35%;
+}
+#txt_filter{
+display: none;
+}
+.exportlinks
+{
+margin-left: 38%;
+}
+.table{
+	border-style: solid;
+	padding-left:2%;
+	width: 90%;
+	border:2px solid black;
+}
+.th,td,thead{
+	border:1px solid black;
+}
+.export{
+padding-left: 5%;
+margin-left: 0px; 
+}
+
+th.sortable a {
+    background-image: url("../images/arrow_off.png");
+    background-size:10px 10px;
+    background-repeat: no-repeat;
+    color: black;
+    padding-left: 20%;
+    
+} 
+.pagelinks.img{
+	size: 10px 10px;
+}
+.dataTable td.hidden { 
+     display: none; 
+} 
+.dataTable th.hidden { 
+     display: none; 
+} 
+.dataTable thead.hidden { 
+     display: none; 
+} 

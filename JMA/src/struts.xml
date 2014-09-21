@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.custom.i18n.resources" value="MessageResources" />
+	<package name="JewelryInventory" extends="struts-default,,jasperreports-default" namespace="/">
+		<result-types>
+			<result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+    		<result-type name="jasper" class="org.apache.struts2.views.jasperreports.JasperReportsResult"/>
+		</result-types>
+		<interceptors>
+				<interceptor name="loginIntercepotr" class="com.jms.actioncontrolleraid.util.LoginInterceptor">
+				</interceptor>		 
+				<interceptor-stack name="loginStack">
+				<interceptor-ref name="loginIntercepotr"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="loginStack"/>
+		<global-results>
+            <result name="login" type="redirectAction">fetch</result>
+            <!-- <result name="Exception">views/error.jsp</result>
+            <result name="error">views/error.jsp</result> -->
+        </global-results>
+
+       <!--  <global-exception-mappings>
+            <exception-mapping exception="java.sql.SQLException" result="SQLException"/>
+            <exception-mapping exception="java.lang.Exception" result="Exception"/>
+        </global-exception-mappings> -->
+		
+		<action name="fetch" class="com.jms.actioncontroller.controllers.SaveAction" method="execute">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">views/Login.jsp</result>
+		</action>
+		<!-- Login / Logout -->
+		<action name="LoginUser" class="com.jms.actioncontroller.controllers.MasterAction" method="Login">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+            <result name="success" type="redirectAction">homeAction.action</result>
+            <result name="login">views/Login.jsp</result>
+		</action>
+		<action name="logout" class="com.jms.actioncontroller.controllers.MasterAction" method="Logout">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result>views/Login.jsp</result>
+		</action>
+		<action name="homeAction" class="com.jms.actioncontroller.controllers.MasterAction" method="execute">
+			<interceptor-ref name="loginStack"></interceptor-ref>
+            <result name="success" type="redirectAction">save.action</result>
+             <result name="login">views/Login.jsp</result>
+		</action>
+		<!-- supplier to save -->
+		<action name="save" class="com.jms.actioncontroller.controllers.MasterAction" method="execute">
+			<interceptor-ref name="loginStack"></interceptor-ref>
+			<result type="tiles">welcome.tiles</result>
+			<result name="input">views/error.jsp</result>
+			<result name="error">views/error.jsp</result>
+		</action>
+		<action name="supplier" class="com.jms.actioncontroller.controllers.MasterAction" method="execute">
+			<result type="tiles">supplier.tiles</result>
+			<result name="input">views/error.jsp</result>
+			<result name="error">views/error.jsp</result>
+		</action>
+		<!-- supplier save -->
+		<action name="supplierSave" class="com.jms.actioncontroller.controllers.MasterAction" method="supplierSave">
+			<interceptor-ref name="token"></interceptor-ref>
+			<interceptor-ref name="basicStack"/>
+			<result type="tiles">supplier.tiles</result>
+			<result name="input">views/error.jsp</result>
+			<result name="error">views/error.jsp</result>
+			<result name="invalid.token">views/invalid_token.jsp</result>			
+		</action>
+		<!-- Supplier List -->
+		<action name="sups" class="com.jms.actioncontroller.controllers.MasterAction" method="suplist">
+			<result type="tiles">sups.tiles</result>
+			<result name="input">views/error.jsp</result>
+			<result name="error">views/error.jsp</result>
+		</action>
+		<!-- Supplier List Export-->
+		<action name="supsexport" class="com.jms.actioncontroller.controllers.MasterAction" method="suplist">
+			<result>/views/list/Supplier.jsp</result>
+			<result name="input">views/error.jsp</result>
+			<result name="error">views/error.jsp</result>
+		</action>
+		<!-- Supplier Detail -->
+    	<action name="supdetail" class="com.jms.actioncontroller.controllers.MasterAction" method="supdetail">
+			<result>/views/view/Supplier.jsp</result>
+			<result name="input">views/error.jsp</result>
+			<result name="error">views/error.jsp</result>
+		</action>
+		<!-- sup maintain -->
+		<action name="supdetailtomaintain" class="com.jms.actioncontroller.controllers.MasterAction" method="execute">
+			<result type="tiles">supmaintain.tiles</result>
+			<result name="input">views/error.jsp</result>
+			<result name="error">views/error.jsp</result>
+		</action>
+		<action name="supdetailmaintain" class="com.jms.actioncontroller.controllers.MasterAction" method="supdetail">
+			<result type="tiles">supmaintain.tiles</result>
+			<result name="input">views/error.jsp</result>
+			<result name="error">views/error.jsp</result>
+		</action>
+		<action name="supplierMaintain" class="com.jms.actioncontroller.controllers.MasterAction" method="supplierSave">
+			<interceptor-ref name="token"></interceptor-ref>
+			<interceptor-ref name="basicStack"/>
+			<result type="tiles">supmaintain.tiles</result>
+			<result name="input">views/error.jsp</result>
+			<result name="error">views/error.jsp</result>
+			<result name="invalid.token">views/invalid_token.jsp</result>			
+		</action>
+		<!-- Employee to save -->
+		<action name="emp" class="com.jms.actioncontroller.controllers.MasterAction" method="execute">
+			<result type="tiles">emp.tiles</result>
+			<result name="input">views/error.jsp</result>
+			<result name="error">views/error.jsp</result>
+		</action>
+		<!-- Employee save -->
+		<action name="empSave" class="com.jms.actioncontroller.controllers.MasterAction" method="empSave">
+			<interceptor-ref name="token"></interceptor-ref>
+			<interceptor-ref name="basicStack"/>
+			<interceptor-ref name="defaultStack">
+                <param name="fileUpload.maximumSize">10485760</param>
+                <param name="fileUpload.allowedTypes">text/plain,application/msword,image/jpeg,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.wordprocessingml.document</param>
+            </interceptor-ref>
+			<result name = "success" type="redirectAction">emp.action</result>
+			<result name="input">views/error.jsp</result>
+			<result name="error">views/error.jsp</result>
+			<result name="invalid.token">views/invalid_token.jsp</result>
+		</action>
+		<action name="download" class="com.jms.actioncontroller.controllers.MasterAction" method="writeSupplierInfo">
+			<result name="success" type="stream">
+			  <param name="contentType">application/octet-stream</param>
+			  <param name="inputName">fileInputStream</param>
+			  <param name="contentDisposition">attachment;filename="${fileName}"</param>
+			  <param name="bufferSize">1024</param>
+			</result>
+   		</action>
+   		<action name="reportEmployee" class="com.jms.actioncontroller.controllers.MasterAction" method="reportEmployee">
+        <result name="success" type="jasper">
+            <param name="location">/jasper/Employee.jasper</param>
+            <param name="dataSource">emp</param>
+            <param name="format">PDF</param>
+        </result>
+       	</action>
+       	 <action name="reportSupplier" class="com.jms.actioncontroller.controllers.MasterAction" method="reportSupplier">
+	        <result name="success" type="jasper">
+	            <param name="location">/jasper/Supplier.jasper</param>
+	            <param name="dataSource">sp</param>
+	            <param name="format">PDF</param>
+	        </result>
+    	</action>
+    	<!-- Employee List -->
+    	<action name="emps" class="com.jms.actioncontroller.controllers.MasterAction" method="emplist">
+			<result type="tiles">emps.tiles</result>
+			<result name="input">views/error.jsp</result>
+			<result name="error">views/error.jsp</result>
+		</action>
+		<!-- Employee List Export-->
+		<action name="empsexport" class="com.jms.actioncontroller.controllers.MasterAction" method="emplist">
+			<result>/views/list/Employee.jsp</result>
+			<result name="input">views/error.jsp</result>
+			<result name="error">views/error.jsp</result>
+		</action>
+		<!-- Employee Detail -->
+    	<action name="empdetail" class="com.jms.actioncontroller.controllers.MasterAction" method="empdetail">
+			<result>/views/view/Employee.jsp</result>
+			<result name="input">views/error.jsp</result>
+			<result name="error">views/error.jsp</result>
+		</action>
+		<!-- EMPLOYEE MAINTAIN -->
+		<action name="empdetailtomaintain" class="com.jms.actioncontroller.controllers.MasterAction" method="execute">
+			<result type="tiles">empmaintain.tiles</result>
+			<result name="input">views/error.jsp</result>
+			<result name="error">views/error.jsp</result>
+		</action>
+		<action name="empdetailmaintain" class="com.jms.actioncontroller.controllers.MasterAction" method="empdetail">
+			<result type="tiles">empmaintain.tiles</result>
+			<result name="input">views/error.jsp</result>
+			<result name="error">views/error.jsp</result>
+		</action>
+		<!-- Product ADD -->
+		<action name="product" class="com.jms.actioncontroller.controllers.MasterAction" method="proprepare">
+			<result name="success" type="tiles">product.tiles</result>
+			<result name="error">views/error.jsp</result>
+		</action>	
+		<action name="productadd" class="com.jms.actioncontroller.controllers.MasterAction" method="productadd">
+			<interceptor-ref name="token"></interceptor-ref>
+			<interceptor-ref name="basicStack"/>
+			<interceptor-ref name="defaultStack">
+                <param name="fileUpload.maximumSize">10485760</param>
+                <param name="fileUpload.allowedTypes">image/jpeg</param>
+            </interceptor-ref>
+			<result name = "success" type="redirectAction">emp.action</result>
+			<result name="input">views/error.jsp</result>
+			<result name="error">views/error.jsp</result>
+			<result name="invalid.token">views/invalid_token.jsp</result>
+			<result name="success" type="tiles">product.tiles</result>
+			<result name="error">views/error.jsp</result>
+		</action>
+		<action name="proque" class="com.jms.actioncontroller.controllers.MasterAction" method="queueproductsearch">
+			<result name="success" type="tiles">product.tiles</result>
+			<result name="error">views/error.jsp</result>
+		</action>
+		<action name="products" class="com.jms.actioncontroller.controllers.MasterAction" method="productList">
+			<result name="success" type="tiles">products.tiles</result>
+			<result name="error">views/error.jsp</result>
+		</action>
+		<action name="productsexport" class="com.jms.actioncontroller.controllers.MasterAction" method="productList">
+			<result name="success">/views/list/Product.jsp</result>
+			<result name="error">views/error.jsp</result>
+		</action>
+		<action name="productDetail" class="com.jms.actioncontroller.controllers.MasterAction" method="queueproductsearchId">
+			<result name="success">/views/view/Product.jsp</result>
+			<result name="error">views/error.jsp</result>
+		</action>
+		<!-- PRODUCT REPORT -->
+		<action name="reportProduct" class="com.jms.actioncontroller.controllers.MasterAction" method="reportProduct">
+	        <result name="success" type="jasper">
+	            <param name="location">/jasper/Product/Product1.jasper</param>
+	            <param name="dataSource">pro</param>
+	            <param name="format">PDF</param>
+	        </result>
+    	</action>	
+    	<!-- ADD TO CART -->
+    	<action name="addtocart" class="com.jms.actioncontroller.controllers.MasterAction" method="addtocart">
+			<result name="success" type="redirectAction">products.action</result>
+			<result name="error">views/error.jsp</result>
+		</action>
+		<action name="productremovecart" class="com.jms.actioncontroller.controllers.MasterAction" method="proremovecart">
+			<result name="success" type="redirectAction">products.action</result>
+			<result name="error">views/error.jsp</result>
+		</action>
+   		<action name="createuser" class="com.jms.actioncontroller.controllers.MasterAction" method="execute">
+			<result name="success">views/Login.jsp</result>
+			<result name="error">views/error.jsp</result>
+		</action>
+		<!--  Master Catlog Add -->
+		<action name="mastercatsaveroute" class="com.jms.actioncontroller.controllers.MasterAction" method="execute">
+			<result name="success">views/catalogue/MasterCatalog.jsp</result>
+			<result name="error">views/error.jsp</result>
+		</action>	
+		<action name="mastercatsave" class="com.jms.actioncontroller.controllers.MasterAction" method="masterCatalogAdd">
+			<result name="success">views/catalogue/MasterCatalog.jsp</result>
+			<result name="error">views/error.jsp</result>
+		</action>
+		<action name="mastercats" class="com.jms.actioncontroller.controllers.MasterAction" method="masterCatalogGet">
+			<result name="success" type="tiles">mastercats.tiles</result>
+			<result name="error">views/error.jsp</result>
+		</action>
+		<!-- Supplier List Export-->
+		<action name="mastercatsexport" class="com.jms.actioncontroller.controllers.MasterAction" method="masterCatalogGet">
+			<result name="success">views/catalogue/MasterCatalogList.jsp</result>
+			<result name="error">views/error.jsp</result>
+		</action>
+		<action name="mastercatdelete" class="com.jms.actioncontroller.controllers.MasterAction" method="globalRemover">
+			<result name="success" type="redirectAction">${fileName}</result>
+			<result name="error">views/error.jsp</result>
+		</action>	
+		<!-- Rate List -->	
+		<action name="ratelist" class="com.jms.actioncontroller.controllers.MasterAction" method="rateListToday">
+			<result name="success" type="tiles">rxchangeRateList.tiles</result>
+			<result name="error">views/error.jsp</result>
+		</action>
+		<!-- Purchase Order -->	
+		<action name="toPo" class="com.jms.actioncontroller.controllers.MasterAction" method="poReady">
+			<result name="success" type="tiles">purchaseorder.tiles</result>
+			<result name="error">views/error.jsp</result>
+		</action>
+		<action name="poSave" class="com.jms.actioncontroller.controllers.MasterAction" method="poSave">
+			<result name="success" type="tiles">purchaseorder.tiles</result>
+			<result name="error">views/error.jsp</result>
+		</action>
+	</package>
+	<package name="default" extends="json-default" namespace="/">	   		
+	        <action name="masterfield" class="com.jms.actioncontroller.controllers.MasterAction" method="masterChangeField">
+				<result name="success" type="json">views/catalogue/MasterCatalog.jsp</result>
+				<result name="error">views/error.jsp</result>
+			</action>
+	</package>	
+</struts>

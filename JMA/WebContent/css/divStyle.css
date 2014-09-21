@@ -1,0 +1,55 @@
+@CHARSET "ISO-8859-1";
+.layer1 {
+margin: 0;
+padding: 0;
+width: 100%;
+padding-left: 1%;
+}
+.downloadlink{
+	width: 10%;
+	height: 8%;
+	left: 80%;
+}
+.MainLayer {
+margin: 0;
+padding: 0;
+width: 100%;
+padding-left: 1%;
+}
+.formtable{
+	
+	padding-right: 0%;
+}
+.generalInfo{
+padding: 5px 10px;
+background-color:#fafafa;
+border-style:solid;
+border-color: gray;
+}
+.headingStatic{
+margin: 1px;
+color: #fff;
+padding: 3px 10px;
+cursor: pointer;
+position: relative;
+background-color:gray;
+border-radius : 3 3;
+height: 32;
+} 
+.heading {
+margin: 1px;
+color: #fff;
+padding: 3px 10px;
+cursor: pointer;
+position: relative;
+background-color:gray;
+border-radius : 3 3;
+height: 32;
+}
+.content {
+padding: 5px 10px;
+background-color:#fafafa;
+border-style:solid;
+border-color: gray;
+}
+p { padding: 5px 0; }

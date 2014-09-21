@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN" "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<!-- Create a base layout that will serve as a template for all pages on this website -->
+<tiles-definitions>
+	<definition name="baseLayout" template="/views/layout/MasterPage.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/views/layout/Banner.jsp" />
+		<!-- Provide the CSS file information using String attributes i.e. masterCss and pageCss here -->
+		<!-- masterCss will define style information for masterpage, hence file name is passed here -->
+		<put-attribute name="masterCss" value="css/MasterStyle.css" type="string" />
+		<!-- pageCss will define style information for each individual page and hence its value will be passed from subsequent tile definition -->
+		<put-attribute name="pageCss" value="css/bootstrap.css" type="string" />
+		<put-attribute name="menu" value="/views/layout/navigation.jsp" />
+		<put-attribute name="nav" value="/views/layout/navigationdiv.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/views/layout/Copyright.jsp" />
+	</definition>
+	<definition name="welcome.tiles" extends="baseLayout">
+		<put-attribute name="title" value="JewelleryManagementSystem" />
+		<put-attribute name="menu" value="/views/layout/navigation.jsp" />
+		<put-attribute name="body" value="/views/entity/Supplier.jsp" />
+	</definition>
+	<definition name="supplier.tiles" extends="baseLayout">
+		<put-attribute name="title" value="JewelleryManagementSystem" />
+		<put-attribute name="menu" value="/views/layout/navigation.jsp" />
+		<put-attribute name="body" value="/views/entity/Supplier.jsp" />
+	</definition>
+	<definition name="emp.tiles" extends="baseLayout">
+		<put-attribute name="title" value="JewelleryManagementSystem" />
+		<put-attribute name="menu" value="/views/layout/navigation.jsp" />
+		<put-attribute name="body" value="/views/entity/Employee.jsp" />
+	</definition>
+	<definition name="emps.tiles" extends="baseLayout">
+		<put-attribute name="title" value="JewelleryManagementSystem" />
+		<put-attribute name="menu" value="/views/layout/navigation.jsp" />
+		<put-attribute name="body" value="/views/list/Employee.jsp" />
+	</definition>
+	<definition name="sups.tiles" extends="baseLayout">
+		<put-attribute name="title" value="JewelleryManagementSystem" />
+		<put-attribute name="menu" value="/views/layout/navigation.jsp" />
+		<put-attribute name="body" value="/views/list/Supplier.jsp" />
+	</definition>
+	<definition name="product.tiles" extends="baseLayout">
+		<put-attribute name="title" value="JewelleryManagementSystem" />
+		<put-attribute name="menu" value="/views/layout/navigation.jsp" />
+		<put-attribute name="body" value="/views/entity/Product.jsp" />
+	</definition>
+	<definition name="products.tiles" extends="baseLayout">
+		<put-attribute name="title" value="JewelleryManagementSystem" />
+		<put-attribute name="menu" value="/views/layout/navigation.jsp" />
+		<put-attribute name="body" value="/views/list/Product.jsp" />
+	</definition>
+	<definition name="productDetail.tiles" extends="baseLayout">
+		<put-attribute name="title" value="JewelleryManagementSystem" />
+		<put-attribute name="menu" value="/views/layout/navigation.jsp" />
+		<put-attribute name="body" value="/views/view/Product.jsp" />
+	</definition>
+	<definition name="empmaintain.tiles" extends="baseLayout">
+		<put-attribute name="title" value="JewelleryManagementSystem" />
+		<put-attribute name="menu" value="/views/layout/navigation.jsp" />
+		<put-attribute name="body" value="/views/maintain/Product.jsp" />
+	</definition>
+	<definition name="empmaintain.tiles" extends="baseLayout">
+		<put-attribute name="title" value="JewelleryManagementSystem" />
+		<put-attribute name="menu" value="/views/layout/navigation.jsp" />
+		<put-attribute name="body" value="/views/maintain/Employee.jsp" />
+	</definition>
+	<definition name="supmaintain.tiles" extends="baseLayout">
+		<put-attribute name="title" value="JewelleryManagementSystem" />
+		<put-attribute name="menu" value="/views/layout/navigation.jsp" />
+		<put-attribute name="body" value="/views/maintain/Supplier.jsp" />
+	</definition>
+	<definition name="mastercats.tiles" extends="baseLayout">
+		<put-attribute name="title" value="JewelleryManagementSystem" />
+		<put-attribute name="menu" value="/views/layout/navigation.jsp" />
+		<put-attribute name="body" value="/views/catalogue/MasterCatalogList.jsp" />
+	</definition>
+	<definition name="rxchangeRateList.tiles" extends="baseLayout">
+		<put-attribute name="title" value="JewelleryManagementSystem" />
+		<put-attribute name="menu" value="/views/layout/navigation.jsp" />
+		<put-attribute name="body" value="/views/list/ExchangeRateList.jsp" />
+	</definition>
+	<definition name="purchaseorder.tiles" extends="baseLayout">
+		<put-attribute name="title" value="JewelleryManagementSystem" />
+		<put-attribute name="menu" value="/views/layout/navigation.jsp" />
+		<put-attribute name="body" value="/views/entity/PurchaseOrder.jsp" />
+	</definition>
+</tiles-definitions>

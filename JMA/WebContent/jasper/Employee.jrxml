@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 4.0.2-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="myJasperTest" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="30" bottomMargin="30">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<field name="ENmae" class="java.lang.String">
+		<fieldDescription><![CDATA[ENmae]]></fieldDescription>
+	</field>
+	<field name="EPosition" class="java.lang.String">
+		<fieldDescription><![CDATA[EPosition]]></fieldDescription>
+	</field>
+	<field name="EFather" class="java.lang.String">
+		<fieldDescription><![CDATA[EFather]]></fieldDescription>
+	</field>
+	<field name="EMobile" class="java.lang.String">
+		<fieldDescription><![CDATA[EMobile]]></fieldDescription>
+	</field>
+	<field name="EDateOut" class="java.lang.String">
+		<fieldDescription><![CDATA[EDateOut]]></fieldDescription>
+	</field>
+	<field name="EHireDate" class="java.lang.String">
+		<fieldDescription><![CDATA[EHireDate]]></fieldDescription>
+	</field>
+	<field name="income" class="com.jms.modelcontroller.models.IncomeDetail">
+		<fieldDescription><![CDATA[income]]></fieldDescription>
+	</field>
+	<field name="ECity" class="java.lang.String">
+		<fieldDescription><![CDATA[ECity]]></fieldDescription>
+	</field>
+	<field name="ECountry" class="java.lang.String">
+		<fieldDescription><![CDATA[ECountry]]></fieldDescription>
+	</field>
+	<field name="EEmail" class="java.lang.String">
+		<fieldDescription><![CDATA[EEmail]]></fieldDescription>
+	</field>
+	<field name="EId" class="java.lang.String">
+		<fieldDescription><![CDATA[EId]]></fieldDescription>
+	</field>
+	<field name="EPersonalDoc" class="java.lang.String">
+		<fieldDescription><![CDATA[EPersonalDoc]]></fieldDescription>
+	</field>
+	<field name="EPhotoPathName" class="java.lang.String">
+		<fieldDescription><![CDATA[EPhotoPathName]]></fieldDescription>
+	</field>
+	<field name="ETel" class="java.lang.String">
+		<fieldDescription><![CDATA[ETel]]></fieldDescription>
+	</field>
+	<field name="bank" class="com.jms.modelcontroller.models.BankInfoEmp">
+		<fieldDescription><![CDATA[bank]]></fieldDescription>
+	</field>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<field name="id" class="java.lang.Long">
+		<fieldDescription><![CDATA[id]]></fieldDescription>
+	</field>
+	<field name="privateNote" class="java.lang.String">
+		<fieldDescription><![CDATA[privateNote]]></fieldDescription>
+	</field>
+	<title>
+		<band height="100" splitType="Stretch">
+			<staticText>
+				<reportElement x="240" y="15" width="100" height="20"/>
+				<text><![CDATA[Employee Information]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="460" y="-20" width="100" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement x="445" y="60" width="100" height="30"/>
+				<jr:Code39 xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<jr:codeExpression><![CDATA[$F{id}]]></jr:codeExpression>
+				</jr:Code39>
+			</componentElement>
+			<image>
+				<reportElement x="24" y="0" width="97" height="80"/>
+				<imageExpression><![CDATA["C:/Users/AHMAG/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp2/wtpwebapps/JMA/"+$F{EPhotoPathName}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="28" splitType="Stretch">
+			<line>
+				<reportElement x="-30" y="0" width="605" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="80" y="0" width="100" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="0" width="62" height="20"/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="331" splitType="Stretch">
+			<staticText>
+				<reportElement x="20" y="78" width="120" height="15"/>
+				<textElement rotation="None">
+					<font isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="260" y="43" width="140" height="15"/>
+				<textElement>
+					<font isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[POSITION]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="400" y="43" width="140" height="15"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{EPosition}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="20" y="43" width="120" height="15"/>
+				<textElement rotation="None">
+					<font isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[FATHER NAME]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="140" y="43" width="120" height="15"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{EFather}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="260" y="78" width="140" height="15"/>
+				<textElement>
+					<font isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[MOBILE]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="140" y="78" width="120" height="15"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ENmae}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="78" width="140" height="15"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{EMobile}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement mode="Opaque" x="20" y="10" width="520" height="21" forecolor="#000000" backcolor="#12FFEF"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="25" y="11" width="100" height="20"/>
+				<text><![CDATA[Personal Information]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Opaque" x="20" y="167" width="520" height="21" forecolor="#000000" backcolor="#12FFEF"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="21" y="220" width="100" height="20"/>
+				<text><![CDATA[Official Informaion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="200" width="110" height="20"/>
+				<text><![CDATA[HIRE DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="250" y="200" width="110" height="20"/>
+				<text><![CDATA[DUE DATE]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="120" y="200" width="110" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{EHireDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="200" width="110" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{EDateOut}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="20" y="250" width="110" height="20"/>
+				<text><![CDATA[PAY BY]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="130" y="250" width="110" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{income}.getPayBy()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="25" y="118" width="120" height="15"/>
+				<textElement rotation="None">
+					<font isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[TELEPHONE]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="147" y="118" width="120" height="15"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ETel}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="265" y="118" width="140" height="15"/>
+				<textElement>
+					<font isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[EMAIL]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="405" y="118" width="140" height="15"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{EEmail}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement mode="Opaque" x="20" y="220" width="520" height="21" forecolor="#000000" backcolor="#12FFEF"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="24" y="167" width="100" height="20"/>
+				<text><![CDATA[Official Informaion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="26" y="220" width="100" height="20"/>
+				<text><![CDATA[Payment Informaiton]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="250" y="250" width="110" height="20"/>
+				<text><![CDATA[TAX]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="390" y="250" width="110" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{income}.getTax()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="21" y="280" width="110" height="20"/>
+				<text><![CDATA[BANK]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="130" y="280" width="110" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{bank}.getBankName()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="280" width="110" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{income}.getSocialIns()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="250" y="280" width="110" height="20"/>
+				<text><![CDATA[SOCIAL INS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="310" width="520" height="20" forecolor="#F831A1"/>
+				<textElement>
+					<font fontName="Serif"/>
+				</textElement>
+				<text><![CDATA[*The Confidential Records , Keep Carefully.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="27" y="141" width="120" height="15"/>
+				<textElement rotation="None">
+					<font isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[COUNTRY]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="148" y="142" width="120" height="15"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ECountry}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement x="80" y="6" width="400" height="20"/>
+				<textElement textAlignment="Center">
+					<font isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Annonymous Co Ltd.Ph 123456]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
